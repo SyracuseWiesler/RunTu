@@ -1,0 +1,38 @@
+<div class="home" page-height-watch>
+    <!--page-height-watch-->
+    <div class="row">
+        <div id="myCarousel" class="carousel slide" carousel-play>
+            <!-- 轮播（Carousel）指标 -->
+            <div class="carousel-indicators" style="height: 20px;">
+                <span class="indicator img-rounded {{$index === 0 ? 'active' : ''}}" data-target="#myCarousel"
+                      data-slide-to="{{$index}}" ng-repeat="x in banners track by $index"
+                      ng-style="indicatorStyle">
+                    <span class="progress-bar img-rounded {{$index === 0 ? 'active' : ''}}" role="progressbar" aria-valuemin="0" aria-valuemax="100"
+                    style="display: inline-block; " carousel-indicator-progress
+                    ></span>
+                </span>
+            </div>
+            <!-- 轮播（Carousel）项目 -->
+            <div class="carousel-inner">
+                <div class="item {{$index === 0 ? 'active' : ''}}" ng-repeat="y in banners track by $index">
+                    <img ng-src="{{y}}" alt="{{$index}} slide">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row display-area">
+        <div class="container">
+            <div class="row">
+                <div class="display col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1"></div>
+                <div class="display col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1"></div>
+                <div class="display col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <br><br><br><br><br>
+    </div>
+    <!--<div class="container home" page-height-watch>-->
+        <!--<h1>Hello World</h1>-->
+    <!--</div>-->
+</div>

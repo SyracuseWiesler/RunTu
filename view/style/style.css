@@ -1,0 +1,164 @@
+html, body, ul, li, hr {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: white;
+}
+/*header part*/
+header {
+    /*height: 200px;*/
+}
+header .outer {
+    height: 100px;
+}
+header .image,
+header .phone,
+header .email {
+    height: 100%;
+    line-height: 100px;
+}
+header .email,
+header .phone{
+    position: relative;
+    left: 100px;
+    /*right: 0;*/
+}
+header .email .glyphicon-envelope,
+header .phone .glyphicon-earphone{
+    font-size: 25px;
+    color: orange;
+    margin-right: 5px;
+}
+header .email a,
+header .phone a{
+    font-size: 105%;
+}
+header .email a:hover,
+header .phone a:hover,
+header .email a:focus,
+header .phone a:focus{
+    text-decoration: none;
+}
+/*header .email strong,*/
+/*header .phone strong {*/
+    /*color: gray;*/
+    /*opacity: 0.6;*/
+/*}*/
+/*header .email a:hover strong,*/
+/*header .phone a:hover strong {*/
+    /*opacity: 1;*/
+/*}*/
+
+header .email .glyphicon-envelope {
+    transform: rotate(-45deg);
+}
+header .phone .glyphicon-earphone {
+    font-size:25px;
+}
+header nav .nav-pills>li {
+    height: 50px;
+    line-height: 50px;
+}
+header nav .nav-pills>li>a,
+header nav .nav-pills>li.dropdown>a.dropdown-toggle,
+header nav .nav-pills>li.active>a,
+header nav .nav-pills>li.dropdown.active>a.dropdown-toggle,
+header nav .nav-pills>li>a:focus{
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+    background: none;
+}
+header nav .nav-pills>li.active>a,
+header nav .nav-pills>li.dropdown.active>a.dropdown-toggle,
+header nav .nav-pills>li.dropdown>a.dropdown-toggle:hover,
+header nav .nav-pills>li.dropdown>a.dropdown-toggle:focus,
+header nav .nav-pills>li.active>a:focus,
+header nav .nav-pills>li.active>a:hover,
+header nav .nav-pills>li>a:hover{
+    background: none;
+    color: #ffc636;
+}
+header nav .dropdown-menu {
+    background: rgb(5, 54, 54);
+}
+header nav .dropdown-menu>li>a{
+    color: white;
+}
+header nav .dropdown-menu>li>a:hover,
+header nav .dropdown-menu>li>a:focus{
+    color: #ffc636;
+    background: none;
+}
+header .wrapper {
+    display: inline-block;
+    border: 1px solid gray;
+    opacity: 0.5;
+    height: 45px;
+    width: 45px;
+    border-radius: 22px;
+    position: absolute;
+    top: 21px;
+    left: 4px;
+}
+header .hr {
+    height: 6px;
+    background: orange;
+}
+/*header nav .nav-pills>li.dropdown>.dropdown-menu {*/
+    /*display: none;*/
+    /*!*visibility: hidden;*!*/
+/*}*/
+/*header nav .nav-pills>li.dropdown:hover>.dropdown-menu {*/
+    /*!*visibility: visible;*!*/
+    /*display: block;*/
+/*}*/
+
+
+
+
+/*footer part*/
+footer .hr {
+    height: 6px;
+    background: orange;
+}
+/*footer>.row:nth-child(2) {*/
+    /*height: 150px;*/
+/*}*/
+footer .container>.row {
+    text-align: center;
+    height: 30px;
+    margin: 10px 0;
+}
+footer .row>div,
+footer .row>div a{
+    font-size: 14px;
+    color: white;
+}
+footer .row>div a:hover,
+footer .row>div a:focus{
+    text-decoration: none;
+    color: orange;
+}
+/*main body part*/
+.home {
+    background: white;
+}
+.home .display-area .display {
+    height: 270px;
+}
+.home .display-area .display:nth-child(odd) {
+    background: rgb(251, 200, 0);
+    opacity: 0.8;
+}
+.home .display-area .display:nth-child(even) {
+    background: rgb(5, 54, 54);
+    opacity: 0.8;
+}
+.home .display-area .display:nth-child(1) {
+
+}
+
+
+
