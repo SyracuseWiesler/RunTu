@@ -1,35 +1,81 @@
 <div class="home" page-height-watch>
     <!--page-height-watch-->
     <div class="row">
-        <div id="myCarousel" class="carousel slide" carousel-play>
-            <!-- 轮播（Carousel）指标 -->
-            <div class="carousel-indicators" style="height: 20px;">
+        <!--<div class="container">-->
+            <div id="myCarousel" class="carousel slide" carousel-play>
+                <!-- 轮播（Carousel）指标 -->
+                <div class="carousel-indicators" style="height: 20px;">
                 <span class="indicator img-rounded {{$index === 0 ? 'active' : ''}}" data-target="#myCarousel"
                       data-slide-to="{{$index}}" ng-repeat="x in banners track by $index"
                       ng-style="indicatorStyle">
                     <span class="progress-bar img-rounded {{$index === 0 ? 'active' : ''}}" role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                    style="display: inline-block; " carousel-indicator-progress
+                          style="display: inline-block; " carousel-indicator-progress
                     ></span>
                 </span>
+                </div>
+                <!-- 轮播（Carousel）项目 -->
+                <div class="carousel-inner">
+                    <div class="item {{$index === 0 ? 'active' : ''}}" ng-repeat="y in banners track by $index">
+                        <img ng-src="{{y}}" alt="{{$index}} slide">
+                    </div>
+                </div>
             </div>
-            <!-- 轮播（Carousel）项目 -->
-            <div class="carousel-inner">
-                <div class="item {{$index === 0 ? 'active' : ''}}" ng-repeat="y in banners track by $index">
-                    <img ng-src="{{y}}" alt="{{$index}} slide">
+        <!--</div>-->
+    </div>
+    <div class="row display-area">
+        <div class="row">
+            <div class="display col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                <div class="display-inner" block-click="left">
+                    <inner-block type="{{homeBlocks.left.type}}" title1="{{homeBlocks.left.title1}}" description="{{homeBlocks.left.description}}"></inner-block>
+                </div>
+            </div>
+            <div class="display col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                <div class="display-inner" block-click="center">
+                    <inner-block type="{{homeBlocks.center.type}}" title1="{{homeBlocks.center.title1}}" description="{{homeBlocks.center.description}}"></inner-block>
+                </div>
+            </div>
+            <div class="display col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+                <div class="display-inner" block-click="right">
+                    <inner-block type="{{homeBlocks.right.type}}" title1="{{homeBlocks.right.title1}}" description="{{homeBlocks.right.description}}"></inner-block>
+                </div>
+            </div>
+        </div>
+        <div class="row show1" style="display: none;">
+            <div class="container-fluid" style="background: white;">
+                <div class="container">
+                    <div class="row" style="background: black; height: 400px;">
+                        <div class="inner-show row">
+                            <div class="col-md-12" style="height: 200px; color: white">
+                                00000000000
+                            </div>
+                        </div>
+                        <div class="inner-show row">
+                            <div class="col-md-6">
+                                <video src="./img/video1.mp4" style="width: 100%; height: 400px;" controls preload="metadata"></video>
+                                <!--<iframe style="width: 100%; height: 400px;" src="https://www.youtube.com/embed/JJaG9ThVR6U" frameborder="0" allowfullscreen></iframe>-->
+                            </div>
+                            <div class="col-md-6">
+                                <video src="./img/video2.mp4" style="width: 100%; height: 400px;" controls preload="metadata"></video>
+                                <!--<iframe style="width: 100%; height: 400px;" src="https://www.youtube.com/embed/q9IvEw8bmn8" frameborder="0" allowfullscreen></iframe>-->
+                            </div>
+                        </div>
+                        <div class="inner-show row">
+                            <div class="col-md-12" style="height: 300px; color: white">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="row center-show" style="height: 400px; background: red;">-->
+                        <!--<div class="inner-show"></div>-->
+                    <!--</div>-->
+                    <!--<div class="row right-show" style="height: 400px; background: blue;">-->
+                        <!--<div class="inner-show"></div>-->
+                    <!--</div>-->
                 </div>
             </div>
         </div>
     </div>
-    <div class="row display-area">
-        <div class="container">
-            <div class="row">
-                <div class="display col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1"></div>
-                <div class="display col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1"></div>
-                <div class="display col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1"></div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
+    <div class="row" style="background: red;">
         <br><br><br><br><br>
     </div>
     <!--<div class="container home" page-height-watch>-->

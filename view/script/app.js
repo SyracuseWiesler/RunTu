@@ -95,12 +95,82 @@ angular.module("myApp", ["ngRoute", "ngAnimate", "modFactory"]).config(function(
     .directive("webHeader", function(){
         return {
             restrict: "AEC",
+            replace: true,
             templateUrl: "header.html"
         };
     })
     .directive("webFooter", function(){
         return {
             restrict: "AEC",
+            replace: true,
             templateUrl: "footer.html",
         };
-    });
+    })
+    .directive("innerBlock", function(){
+        return {
+            restrict: "AEC",
+            replace: true,
+            templateUrl: "innerBlock.html",
+            scope: {
+                type: "@",
+                title1: "@",
+                description: "@",
+            },
+        }
+    })
+    .directive("blockClick", ["myFactory", function(myFactory){
+        return {
+            restrict: "A",
+            scope: false,
+            link: function(scope, element, attrs){
+                element.on("click", function(){
+                    var i, x;
+                    var innerShow = angular.element(document).find(".inner-show");
+                    var show1 = angular.element(document).find(".show1");
+                    var video = angular.element(document).find("video");
+                    switch(attrs.blockClick) {
+                        case "left":
+                            x = 0;
+                            break;
+                        case "center":
+                            x = 1;
+                            break;
+                        case "right":
+                            x = 2;
+                            break;
+                    }
+                    if (! scope.blockShowsOpened) {  // 如果展示区域还未打开
+                        innerShow.css("display", "none");
+                        scope.blockShows[x] = true;
+                        innerShow.eq(x).fadeIn(600);
+                        show1.slideDown(600);
+                        scope.blockShowsOpened = true;
+                        element.addClass("active");
+                    } else {  // 如果展示区域已经打开
+                        if (scope.blockShows[x]) {  // 如果当前点击的，已经被打开了
+                            if (x === 1) {  // 如果是点击的关闭视频
+                                myFactory.stopVideo(video);
+                            }
+                            innerShow.eq(x).fadeOut(600);
+                            show1.slideUp(600);
+                            scope.blockShowsOpened = false;
+                            for (i = 0; i < scope.blockShows.length; i ++) {
+                                scope.blockShows[i] = false;
+                            }
+                            angular.element(document).find(".display-inner").removeClass("active");
+                        } else {  // 如果当前点击的没有被打开
+                            for (i = 0; i < scope.blockShows.length; i ++) {
+                                scope.blockShows[i] = false;
+                                innerShow.eq(i).hide();
+                            }
+                            innerShow.eq(x).fadeIn(600);
+                            scope.blockShows[x] = true;
+                            angular.element(document).find(".display-inner").removeClass("active");
+                            element.addClass("active");
+                        }
+                    }
+                });
+            },
+        };
+    }])
+;
