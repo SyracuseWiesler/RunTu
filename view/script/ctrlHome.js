@@ -7,4 +7,6 @@ angular.module("myApp").controller("ctrlHome", ["$scope", "myFactory", "$filter"
     $scope.homeBlocks = myFactory.homeBlocks;
     $scope.blockShows = [false, false, false];
     $scope.blockShowsOpened = false;
+    $scope.products = myFactory.products;
+    $scope.innerShowText = myFactory.innerShowText;
 }]);

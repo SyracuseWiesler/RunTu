@@ -5,6 +5,8 @@ angular.module("myApp", ["ngRoute", "ngAnimate", "modFactory"]).config(function(
     $routeProvider.when("/", {
         templateUrl: "home.html",
         controller: "ctrlHome"
+    }).otherwise({
+        redirectTo: "/",
     });
 })
     .directive("pageHeightWatch", function(){
@@ -50,6 +52,24 @@ angular.module("myApp", ["ngRoute", "ngAnimate", "modFactory"]).config(function(
                     pause: false,
                 });
             }
+        };
+    }])
+    .directive("carouselPlay1", ["myFactory", function(myFactory){
+        return {
+            restrict: "A",
+            scope: false,
+            link: function(scope, element, attrs){
+                element.carousel({
+                    interval: myFactory.carousel1Interval,
+                    pause: "hover",
+                });
+                element.find(".left").click(function(){
+                    element.carousel("prev");
+                });
+                element.find(".right").click(function(){
+                    element.carousel("next");
+                });
+            },
         };
     }])
     .directive("carouselIndicatorProgress", ["myFactory", "$interval", function(myFactory, $interval){
@@ -118,6 +138,13 @@ angular.module("myApp", ["ngRoute", "ngAnimate", "modFactory"]).config(function(
             },
         }
     })
+    .directive("displayCarousel", function(){
+        return {
+            restrict: "AEC",
+            replace: true,
+            templateUrl: "displayCarousel.html"
+        };
+    })
     .directive("blockClick", ["myFactory", function(myFactory){
         return {
             restrict: "A",
@@ -140,6 +167,9 @@ angular.module("myApp", ["ngRoute", "ngAnimate", "modFactory"]).config(function(
                             break;
                     }
                     if (! scope.blockShowsOpened) {  // 如果展示区域还未打开
+                        if (x === 0) {
+                            angular.element(document).find("#myCarousel1").carousel(0);
+                        }
                         innerShow.css("display", "none");
                         scope.blockShows[x] = true;
                         innerShow.eq(x).fadeIn(600);
@@ -159,6 +189,10 @@ angular.module("myApp", ["ngRoute", "ngAnimate", "modFactory"]).config(function(
                             }
                             angular.element(document).find(".display-inner").removeClass("active");
                         } else {  // 如果当前点击的没有被打开
+                            myFactory.stopVideo(video);
+                            if (x === 0) {
+                                angular.element(document).find("#myCarousel1").carousel(0);
+                            }
                             for (i = 0; i < scope.blockShows.length; i ++) {
                                 scope.blockShows[i] = false;
                                 innerShow.eq(i).hide();

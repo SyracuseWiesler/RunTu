@@ -1,0 +1,28 @@
+<div id="myCarousel1" class="carousel slide" carousel-play1>
+    <!-- Carousel Indicator-->
+    <div class="carousel-indicators" style="left: 30%; width: 100px;">
+        <div class="{{$index === 0 ? 'active' : ''}} img-rounded" data-target="#myCarousel1" data-slide-to="{{$index}}" ng-repeat="x in products track by $index"
+             style="width: 10px; height: 20px; border: 1px solid white; margin: 5px 0;" href=""
+        ></div>
+    </div>
+    <!-- Carousel Item-->
+    <div class="carousel-inner">
+        <div class="item {{$index === 0 ? 'active' : ''}}" ng-repeat="y in products track by $index">
+            <div class="row">
+                <img class="img-responsive img-rounded" ng-src="{{y.url}}" alt="{{y.name}}" style="margin: 0 auto; border: 5px solid white; border-radius: 3px;">
+            </div>
+            <div class="row">
+                <p class="img-rounded" style="text-align: center; background: green; width: 410px; height: 35px; line-height: 35px; margin: 0 auto;">
+                    <strong>{{y.name}}</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel navigator-->
+    <a class="carousel-control left" href=""
+       data-slide="prev"><i class="fa fa-chevron-left" aria-hidden="true"></i>
+    </a>
+    <a class="carousel-control right" href=""
+       data-slide="next"><i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </a>
+</div>

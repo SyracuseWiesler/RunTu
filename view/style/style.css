@@ -1,4 +1,4 @@
-html, body, ul, li, hr, h1 {
+html, body, ul, li, hr, h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
 }
@@ -246,6 +246,27 @@ footer .row>div a:focus{
 }
 .home video::-webkit-media-controls-panel {
     width: calc(100% + 30px);
+}
+.home #myCarousel1 .left i,
+.home #myCarousel1 .right i{
+    font-size: 30px;
+    margin-top: 100%;
+}
+.home #myCarousel1 .item p:hover,
+.home #myCarousel1 .item img:hover{
+    cursor: pointer;
+}
+.home .usage .row h1,
+.home .usage .row h2,
+.home .news .row h1{
+    text-align: center;
+    margin: 20px 0 5px 0;
+    color: gray;
+}
+.home .usage .row hr,
+.home .news .row hr{
+    margin: 10px 0;
+    border: 1px solid rgb(193, 193, 193);
 }
 
 
