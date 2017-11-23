@@ -176,6 +176,7 @@ angular.module("myApp", ["ngRoute", "ngAnimate", "modFactory"]).config(function(
                         show1.slideDown(600);
                         scope.blockShowsOpened = true;
                         element.addClass("active");
+                        angular.element(document).find(".inner-show")[x].scrollIntoView(true);
                     } else {  // 如果展示区域已经打开
                         if (scope.blockShows[x]) {  // 如果当前点击的，已经被打开了
                             if (x === 1) {  // 如果是点击的关闭视频
@@ -201,10 +202,26 @@ angular.module("myApp", ["ngRoute", "ngAnimate", "modFactory"]).config(function(
                             scope.blockShows[x] = true;
                             angular.element(document).find(".display-inner").removeClass("active");
                             element.addClass("active");
+                            angular.element(document).find(".inner-show")[x].scrollIntoView(true);
                         }
                     }
                 });
             },
         };
     }])
+    .directive("news", function(){
+        return {
+            restrict: "E",
+            // replace: true,
+            scope: {
+                title: "@articleTitle",
+                icon: "@",
+                showCaseTitle: "@",
+                showCaseUrl: "@",
+                showCaseConcise: "@",
+                list: "=",
+            },
+            templateUrl: "news.html",
+        };
+    })
 ;

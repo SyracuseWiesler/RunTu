@@ -24,23 +24,23 @@
     </div>
     <div class="row display-area">
         <div class="row">
-            <div class="display col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+            <div class="display col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-12">
                 <div class="display-inner" block-click="left">
                     <inner-block type="{{homeBlocks.left.type}}" title1="{{homeBlocks.left.title1}}" description="{{homeBlocks.left.description}}"></inner-block>
                 </div>
             </div>
-            <div class="display col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+            <div class="display col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-12">
                 <div class="display-inner" block-click="center">
                     <inner-block type="{{homeBlocks.center.type}}" title1="{{homeBlocks.center.title1}}" description="{{homeBlocks.center.description}}"></inner-block>
                 </div>
             </div>
-            <div class="display col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-10 col-xs-offset-1">
+            <div class="display col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-12">
                 <div class="display-inner" block-click="right">
                     <inner-block type="{{homeBlocks.right.type}}" title1="{{homeBlocks.right.title1}}" description="{{homeBlocks.right.description}}"></inner-block>
                 </div>
             </div>
         </div>
-        <div class="row show1" style="display: none;">
+        <div class="row show1" style="display: none;" id="show1">
             <div class="container-fluid" style="background: white;">
                 <div class="container">
                     <div class="row" style="background: black; ">
@@ -61,7 +61,7 @@
                             </div>
                         </div>
                         <div class="inner-show row" style="padding-top: 40px;">
-                            <div class="col-md-4" style="height: 300px; color: white; padding: 0 5px 0 10px;">
+                            <div class="col-md-4" style="color: white; padding: 0 5px 0 10px;">
                                 <img class="img-responsive" src="./img/about1.png" alt="宁夏润土生物科技有限公司">
                             </div>
                             <div class="col-md-2" style="height: 300px; color: white; padding: 0 5px;">
@@ -72,7 +72,7 @@
                                     <img class="img-responsive" src="./img/about3.png" alt="宁夏润土生物科技有限公司">
                                 </div>
                             </div>
-                            <div class="col-md-6" style="height: 300px; color: white">
+                            <div class="col-md-6" style="color: white">
                                 <p style="height: 100%; margin: 0;" ng-bind="innerShowText"></p>
                             </div>
                         </div>
@@ -84,7 +84,6 @@
     <div class="container usage">
         <div class="row">
             <h1><strong><i class="fa fa-cubes" aria-hidden="true"></i>产品用途</strong></h1>
-            <!--<h2><strong>Product Application</strong></h2>-->
             <hr>
         </div>
         <div class="row">
@@ -95,58 +94,14 @@
     </div>
     <div class="container news">
         <div class="row">
-            <div class="col-md-6">
-                <div class="row">
-                    <h1><strong><i class="fa fa-television" aria-hidden="true"></i>公司新闻</strong></h1>
-                    <hr>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <img class="img-responsive img-thumbnail" src="./img/news01.jpg" alt="news01">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="row">
-                            <h4><strong>腐植酸在农业及工业上的具体应用和贡献</strong></h4>
-                        </div>
-                        <div class="row">
-                            <p>
-                                腐植酸在农业上的应用已被普遍认可，主要作用有：增进肥效、改良土壤、改善品质、调节作物生长和增强作物的抗逆性等。
-                                主要产品类型有腐植酸土壤改良类、腐植酸类肥料、腐植酸类农药、腐植酸种苗类等。腐植......
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="row">
-                    <div class="col-md-10" style="padding: 0 0 0 15px;">
-                        <i class="fa fa-caret-right" aria-hidden="true"></i>腐植酸在农业及工业上的具体应用和贡献
-                    </div>
-                    <div class="col-md-2" style="padding: 0;">[2017-02-25]</div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="row">
-                    <h1><strong><i class="fa fa-globe" aria-hidden="true"></i>行业动态</strong></h1>
-                    <hr>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <img class="img-responsive img-thumbnail" src="./img/hydt01.jpg" alt="news01">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="row">
-                            <h4><strong>腐植酸水溶肥料促进水肥一体化发展</strong></h4>
-                        </div>
-                        <div class="row">
-                            <p>
-                                在过去的几年里，我国的水肥一体化得到了广大的推广和发展，
-                                腐植酸水溶肥料对水肥一体化的发展起到了至关重要的作用。随着农业的不断发展，
-                                农业集约化经营逐渐显现出其卓越的优点，施肥方式和灌溉方式的......
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!--Company News-->
+            <news article-title="{{companyNews.title}}" icon="{{companyNews.icon}}" show-case-title="{{companyNews.showCaseTitle}}"
+                  show-case-url="{{companyNews.showCaseUrl}}" show-case-concise="{{companyNews.showCaseConcise}}" list="companyNews.list"
+            ></news>
+            <!--Industry News-->
+            <news article-title="{{industryNews.title}}" icon="{{industryNews.icon}}" show-case-title="{{industryNews.showCaseTitle}}"
+                  show-case-url="{{industryNews.showCaseUrl}}" show-case-concise="{{industryNews.showCaseConcise}}" list="companyNews.list"
+            ></news>
         </div>
     </div>
 </div>

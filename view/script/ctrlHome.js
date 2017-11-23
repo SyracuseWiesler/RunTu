@@ -9,4 +9,6 @@ angular.module("myApp").controller("ctrlHome", ["$scope", "myFactory", "$filter"
     $scope.blockShowsOpened = false;
     $scope.products = myFactory.products;
     $scope.innerShowText = myFactory.innerShowText;
+    $scope.industryNews = myFactory.industryNews;
+    $scope.companyNews = myFactory.companyNews;
 }]);
