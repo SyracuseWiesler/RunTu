@@ -31,6 +31,15 @@ body {
 /*}*/
 @media (min-width: 320px) and (max-width: 768px){
     /*mobile col-xs-*/
+    header .email,
+    header .phone{
+        position: relative;
+        left: 50px;
+        /*right: 0;*/
+    }
+    footer .row:nth-child(2) {
+        height: 120px;
+    }
     .home video::-internal-media-controls-download-button {
         display:none;
     }
@@ -79,10 +88,21 @@ body {
     .home #myCarousel1 strong {
         text-align: center;
     }
-
+    /*.home .news  img {*/
+        /*text-align: center;*/
+    /*}*/
 }
 @media all and (min-width: 768px){
     /*tablet col-sm-*/
+    header .email,
+    header .phone{
+        /*position: relative;*/
+        left: 100px;
+        /*right: 0;*/
+    }
+    footer .row:nth-child(2) {
+        height: auto;
+    }
 
     .navbar-brand {
         display: none;
@@ -119,12 +139,11 @@ header .email {
     height: 100%;
     line-height: 100px;
 }
-header .email,
-header .phone{
-    position: relative;
-    left: 100px;
-    /*right: 0;*/
-}
+/*header .email,*/
+/*header .phone{*/
+    /*position: relative;*/
+    /*left: 100px;*/
+/*}*/
 header .email .glyphicon-envelope,
 header .phone .glyphicon-earphone{
     font-size: 25px;
