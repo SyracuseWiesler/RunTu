@@ -5,6 +5,9 @@ angular.module("myApp", ["ngRoute", "ngAnimate", "modFactory"]).config(function(
     $routeProvider.when("/", {
         templateUrl: "home.html",
         controller: "ctrlHome"
+    }).when("/news", {
+        templateUrl: "myNews.html",
+        controller: "ctrlMyNews",
     }).otherwise({
         redirectTo: "/",
     });
@@ -223,5 +226,13 @@ angular.module("myApp", ["ngRoute", "ngAnimate", "modFactory"]).config(function(
             },
             templateUrl: "news.html",
         };
+    })
+    .directive("myArticle", function(){
+        return {
+            restrict: "AEC",
+            scope: false,
+            transclude: true,
+            templateUrl: "myArticle.html"
+        }
     })
 ;
