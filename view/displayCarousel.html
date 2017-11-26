@@ -10,16 +10,18 @@
         <div class="item {{$index === 0 ? 'active' : ''}}" ng-repeat="y in products track by $index">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1">
-                    <img class="img-responsive img-rounded" ng-src="{{y.url}}" alt="{{y.name}}" style="margin: 0 auto; border: 5px solid white; border-radius: 3px;">
+                    <img class="img-responsive img-rounded" ng-src="{{y.url}}" alt="{{y.name}}"
+                         style="margin: 0 auto; border: 5px solid white; border-radius: 3px; width: 85%;">
+                    <p class="img-rounded" style="background: green; width: 85%; text-align: center; margin: 0 0 0 7.5%; height: 35px; line-height: 35px;"><strong>{{y.name}}</strong></p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1">
-                    <p class="img-rounded" style="text-align: center; background: green; height: 35px; line-height: 35px; margin: 0 auto;">
-                        <strong>{{y.name}}</strong>
-                    </p>
-                </div>
-            </div>
+            <!--<div class="row">-->
+                <!--<div class="col-md-4 col-md-offset-4 col-xs-10 col-xs-offset-1">-->
+                    <!--<p class="img-rounded" style="text-align: center; background: green; height: 35px; line-height: 35px; margin: 0 auto;">-->
+                        <!--<strong>{{y.name}}</strong>-->
+                    <!--</p>-->
+                <!--</div>-->
+            <!--</div>-->
         </div>
     </div>
     <!-- Carousel navigator-->

@@ -20,11 +20,11 @@
     </div>
     <hr>
     <div class="row" ng-repeat="x in list track by $index" style="margin: 10px 0;">
-        <div class="col-md-10 col-xs-8" style="padding: 0 0 0 15px;">
+        <div class="col-md-9 col-xs-8" style="padding: 0 0 0 15px;">
             <a href="">
                 <i class="fa fa-caret-right" aria-hidden="true" style="color: green;"></i>{{x.title}}
             </a>
         </div>
-        <div class="col-md-2 col-xs-4" style="padding: 0;">[{{x.date}}]</div>
+        <div class="col-md-3 col-xs-4" style="padding: 0; text-align: right;">[{{x.date}}]</div>
     </div>
 </div>
