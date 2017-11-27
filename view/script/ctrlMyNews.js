@@ -1,4 +1,4 @@
-angular.module("myApp").controller("ctrlMyNews", ["$scope", "myFactory", "$location", function($scope, myFactory, $location){
+angular.module("myApp").controller("ctrlMyNews", ["$scope", "myFactory", "$location", "$rootScope", function($scope, myFactory, $location, $rootScope){
     $scope.atBtn1 = myFactory.atBtn1;
     $scope.isNewsOpened = false;
     $scope.industryNews = myFactory.industryNews;
@@ -20,6 +20,9 @@ angular.module("myApp").controller("ctrlMyNews", ["$scope", "myFactory", "$locat
         }
         $scope.atBtn1 = myFactory.atBtn1;
         $scope.isNewsOpened = true;
+        // angular.element(".articleTitle")[0].scrollIntoView();
     };
+    myFactory.setMenubar(1);
+    $rootScope.menubar = myFactory.menubar;
 
 }]);

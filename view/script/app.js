@@ -134,7 +134,7 @@ angular.module("myApp", ["ngRoute", "ngAnimate", "modFactory"]).config(["$routeP
         return {
             restrict: "AEC",
             replace: true,
-            templateUrl: "header.html"
+            templateUrl: "header.html",
         };
     })
     .directive("webFooter", function(){
@@ -258,5 +258,28 @@ angular.module("myApp", ["ngRoute", "ngAnimate", "modFactory"]).config(["$routeP
             transclude: true,
             templateUrl: "myArticle.html"
         }
+    })
+    .directive("scrollHere", function(){
+        return {
+            restrict: "A",
+            scope: false,
+            link: function(scope, element, attrs){
+                angular.element(document).ready(function(){
+                    element[0].scrollIntoView();
+                });
+            },
+        };
+    })
+    .directive("menuClick", function(){
+        return {
+            restrict: "A",
+            scope: false,
+            link: function(scope, element, attrs){
+                element.on("click", function(){
+                    angular.element(document).find("header").find(".nav.navbar-nav").children("li").removeClass("active");
+                    element.addClass("active");
+                });
+            },
+        };
     })
 ;

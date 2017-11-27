@@ -94,6 +94,8 @@ angular.module("modFactory", []).factory("myFactory", function(){
     };
     /**myNews.html 初始状态*/
     var atBtn1 = true;
+    /**菜单栏初始状态*/
+    var menubar = [true, false, false, false, false, false];
     return {
         banners: banners,
         carouselInterval: carouselInterval,
@@ -104,6 +106,13 @@ angular.module("modFactory", []).factory("myFactory", function(){
         products: products,
         innerShowText: innerShowText,
         atBtn1: atBtn1,
+        menubar: menubar,
+        setMenubar: function (idx){
+            for (var i = 0; i < menubar.length; i ++) {
+                menubar[i] = false;
+            }
+            menubar[idx] = true;
+        },
         stopVideo: function(video){
             for (var i = 0; i < video.length; i ++) {
                 video[i].pause();
@@ -113,6 +122,5 @@ angular.module("modFactory", []).factory("myFactory", function(){
         myTime: myTime,
         companyNews: companyNews,
         industryNews: industryNews,
-
     };
 });

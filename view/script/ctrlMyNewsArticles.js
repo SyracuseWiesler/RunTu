@@ -1,8 +1,11 @@
 /**
  * Created by Eric on 11/26/2017.
  */
-angular.module("myApp").controller("ctrlMyNewsArticles", ["$scope", "$location", "myFactory", function($scope, $location, myFactory){
+angular.module("myApp").controller("ctrlMyNewsArticles", ["$scope", "$location", "myFactory", "$rootScope", function($scope, $location, myFactory, $rootScope){
     $scope.$parent.isNewsOpened = true;
+    // angular.element(document).ready(function(){
+    //     angular.element(".articleTitle")[0].scrollIntoView();
+    // });
     var params = $location.url().split("/");
     var type = params[params.length - 2];
     if (type === "industryNews") {
@@ -20,6 +23,8 @@ angular.module("myApp").controller("ctrlMyNewsArticles", ["$scope", "$location",
         $scope.atBtn1 = myFactory.atBtn1;
     };
     $scope.myTime = myFactory.myTime;
+    myFactory.setMenubar(1);
+    $rootScope.menubar = myFactory.menubar;
 
 
 }]);
