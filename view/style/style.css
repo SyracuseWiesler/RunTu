@@ -107,10 +107,37 @@ body {
         text-align: left;
         outline: none;
     }
-    .myNews #myNews_btn1 .btn.btn-info.active,
-    .myNews #myNews_btn2 .btn.btn-info.active {
+    .myNews #myNews_btn1 .btn.btn-primary,
+    .myNews #myNews_btn2 .btn.btn-primary {
+        border: none;
+    }
+    .myNews #myNews_btn1 .btn.btn-primary.active,
+    .myNews #myNews_btn2 .btn.btn-primary.active {
         background: orange;
     }
+    .myNews .newsContent h3 {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .myNews .newsContent h3 strong {
+        font-weight: 900;
+    }
+    .myNews .newsContent>div.row>div.articleSrc {
+        text-align: center;
+    }
+    .myNews .newsContent>div.row>div.articleDate {
+        text-align: center;
+        padding: 0;
+    }
+    .myNews .newsContent>div.row>div.articleSrc span,
+    .myNews .newsContent>div.row>div.articleDate span {
+        color: orange;
+    }
+    .myNews .newsContent>div.row.articleContent {
+        padding-top: 20px;
+        font-family: SimSun;
+    }
+
     /*.home .news  img {*/
         /*text-align: center;*/
     /*}*/
@@ -159,9 +186,35 @@ body {
         text-align: left;
         outline: none;
     }
-    .myNews #myNews_btn1 .btn.btn-info.active,
-    .myNews #myNews_btn2 .btn.btn-info.active {
+    .myNews #myNews_btn1 .btn.btn-primary,
+    .myNews #myNews_btn2 .btn.btn-primary {
+        border: none;
+    }
+    .myNews #myNews_btn1 .btn.btn-primary.active,
+    .myNews #myNews_btn2 .btn.btn-primary.active {
         background: orange;
+    }
+    .myNews .newsContent h3 {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .myNews .newsContent h3 strong {
+        font-weight: 900;
+    }
+    .myNews .newsContent>div.row>div.articleSrc {
+        text-align: right;
+    }
+    .myNews .newsContent>div.row>div.articleDate {
+        text-align: left;
+        padding: 0;
+    }
+    .myNews .newsContent>div.row>div.articleSrc span,
+    .myNews .newsContent>div.row>div.articleDate span {
+        color: orange;
+    }
+    .myNews .newsContent>div.row.articleContent {
+        padding-top: 20px;
+        font-family: SimSun;
     }
 
 
@@ -186,6 +239,14 @@ body {
     .home .inner-show:nth-child(3)>div:nth-child(2)>div {
         height: 117px;
     }
+    .myNews .newsContent>div.row>div.articleSrc {
+        margin-left: 22%;
+    }
+    /*.myNews .newsContent>div.row>div.articleDate {*/
+        /*text-align: left;*/
+        /*padding: 0;*/
+    /*}*/
+
 
 }
 @media all and (min-width: 1200px) {

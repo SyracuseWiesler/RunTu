@@ -1,17 +1,32 @@
 /**
  * Created by Eric on 11/17/2017.
  */
-angular.module("myApp", ["ngRoute", "ngAnimate", "modFactory"]).config(function($routeProvider){
+angular.module("myApp", ["ngRoute", "ngAnimate", "modFactory"]).config(["$routeProvider", function($routeProvider){
+    var companyNews = [0, 1, 2, 3, 4, 5];
+    var industryNews = [0, 1, 2, 3, 4, 5, 6];
     $routeProvider.when("/", {
         templateUrl: "home.html",
         controller: "ctrlHome"
     }).when("/news", {
         templateUrl: "myNews.html",
         controller: "ctrlMyNews",
-    }).otherwise({
+    });
+    industryNews.forEach(function(val){
+        $routeProvider.when("/news/industryNews/" + val, {
+            templateUrl: "./articles/industryNews" + val + ".html",
+            controller: "ctrlMyNewsArticles",
+        });
+    });
+    companyNews.forEach(function(val){
+        $routeProvider.when("/news/companyNews/" + val, {
+            templateUrl: "./articles/companyNews" + val + ".html",
+            controller: "ctrlMyNewsArticles",
+        });
+    });
+    $routeProvider.otherwise({
         redirectTo: "/",
     });
-})
+}])
     .directive("pageHeightWatch", function(){
         return {
             restrict: "A",
@@ -218,6 +233,7 @@ angular.module("myApp", ["ngRoute", "ngAnimate", "modFactory"]).config(function(
             // replace: true,
             scope: {
                 title: "@articleTitle",
+                titleEng: "@",
                 icon: "@",
                 showCaseTitle: "@",
                 showCaseUrl: "@",
@@ -225,6 +241,14 @@ angular.module("myApp", ["ngRoute", "ngAnimate", "modFactory"]).config(function(
                 list: "=",
             },
             templateUrl: "news.html",
+        };
+    })
+    .directive("myNewsHeader", function(){
+        return {
+            restrict: "E",
+            replace: true,
+            scope: false,
+            templateUrl: "myNewsHeader.html",
         };
     })
     .directive("myArticle", function(){

@@ -4,7 +4,7 @@
         <hr>
     </div>
     <div class="row">
-        <a href="">
+        <a ng-href="#!/news/{{titleEng}}/0">
             <div class="col-md-4 col-xs-12"  style="text-align: center">
                 <img class="img-responsive img-thumbnail" ng-src="{{showCaseUrl}}" alt="news">
             </div>
@@ -19,9 +19,9 @@
         </a>
     </div>
     <hr>
-    <div class="row" ng-repeat="x in list track by $index" style="margin: 10px 0;">
+    <div class="row" ng-repeat="x in list.slice(0, 5) track by $index" style="margin: 10px 0;">
         <div class="col-md-9 col-xs-8" style="padding: 0 0 0 15px;">
-            <a href="">
+            <a ng-href="#!/news/{{titleEng}}/{{$index}}">
                 <i class="fa fa-caret-right" aria-hidden="true" style="color: green;"></i>{{x.title}}
             </a>
         </div>

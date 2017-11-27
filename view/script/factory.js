@@ -59,6 +59,7 @@ angular.module("modFactory", []).factory("myFactory", function(){
     }
     var companyNews = {
         title: "公司新闻",
+        titleEng: "companyNews",
         icon: "television",
         showCaseUrl: "./img/news01.jpg",
         showCaseTitle: "腐植酸在农业及工业上的具体应用和贡献",
@@ -70,10 +71,12 @@ angular.module("modFactory", []).factory("myFactory", function(){
             {title: "腐植酸对微生物和低等植物的生长有促进作用", url: "", date: myTime()},
             {title: "腐植酸涂层缓释肥在施用中应注意的几个问题", url: "", date: myTime()},
             {title: "腐植酸在修复生态环境中的重要作用", url: "", date: myTime()},
+            {title: "生物腐植酸在低碳农业中的地位与作用", url: "", date: myTime()},
         ],
     };
     var industryNews = {
         title: "行业动态",
+        titleEng: "industryNews",
         icon: "globe",
         showCaseUrl: "./img/hydt01.jpg",
         showCaseTitle: "腐植酸水溶肥料促进水肥一体化发展",
@@ -85,8 +88,12 @@ angular.module("modFactory", []).factory("myFactory", function(){
             {title: "腐植酸原料为什么要“活化”？", url: "", date: myTime()},
             {title: "近8年，腐植酸低碳农业节节攀高", url: "", date: myTime()},
             {title: "在“化肥与土壤”之间，让腐植酸良性调节好", url: "", date: myTime()},
+            {title: "腐植酸肥料春来花开风满楼", url: "", date: myTime()},
+            {title: "腐植酸，看“天气”重在补“地气”", url: "", date: myTime()},
         ],
     };
+    /**myNews.html 初始状态*/
+    var atBtn1 = true;
     return {
         banners: banners,
         carouselInterval: carouselInterval,
@@ -96,6 +103,7 @@ angular.module("modFactory", []).factory("myFactory", function(){
         homeBlocks: homeBlocks,
         products: products,
         innerShowText: innerShowText,
+        atBtn1: atBtn1,
         stopVideo: function(video){
             for (var i = 0; i < video.length; i ++) {
                 video[i].pause();
