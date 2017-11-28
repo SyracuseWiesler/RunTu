@@ -98,6 +98,9 @@ angular.module("modFactory", []).factory("myFactory", function(){
     var menubar = [true, false, false, false, false, false];
     /**产品页面初始选中*/
     var selectedIdx = [0];
+    /**关于页面初始状态*/
+    var about = [true, false, false, false];
+    var aboutBtns = ["公司简介", "企业文化", "资质荣誉", "企业风采"];
     return {
         banners: banners,
         carouselInterval: carouselInterval,
@@ -110,6 +113,8 @@ angular.module("modFactory", []).factory("myFactory", function(){
         atBtn1: atBtn1,
         menubar: menubar,
         selectedIdx: selectedIdx,
+        about: about,
+        aboutBtns: aboutBtns,
         setMenubar: function (idx){
             for (var i = 0; i < menubar.length; i ++) {
                 menubar[i] = false;

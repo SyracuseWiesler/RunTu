@@ -306,5 +306,42 @@ angular.module("myApp", ["ngRoute", "ngAnimate", "modFactory"]).config(["$routeP
             },
         };
     }])
+    .directive("aboutHeader", function(){
+        return {
+            restrict: "AEC",
+            replace: true,
+            templateUrl: "aboutHeader.html",
+        };
+    })
+    .directive("aboutArticle", function(){
+        return {
+            restrict: "AEC",
+            replace: true,
+            templateUrl: "./articles/aboutArticle.html",
+        };
+    })
+    .directive("showCover", function(){
+        return {
+            restrict: "A",
+            scope: false,
+            link: function(scope, element, attrs){
+                var coverStyle = {
+                    display: "block",
+                    position: "absolute",
+                    background: "rgba(0, 0, 0, 0.5)",
+                    top: angular.element(document).find("header").height() + "px",
+                    left: "5%",
+                    width: "90%",
+                    height: angular.element(document).find("html").find("body").height() - angular.element(document).find("html").find("header").height() - angular.element(document).find("html").find("footer").height() + "px",
+                };
+                element.on("click", function(){
+                    if (angular.element(document).find("html").width() >= 992) {
+                        angular.element(document).find(".cover").css(coverStyle);
+                        angular.element(document).find(".cover").children("img").src = attrs.showCover === "license" ? "./img/license.jpg" : "./img/permit.jpg";
+                    }
+                });
+            },
+        };
+    })
 
 ;

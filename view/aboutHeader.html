@@ -1,0 +1,13 @@
+<div>
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1" style="text-align: center">
+            <h1><strong>关于润土</strong></h1>
+        </div>
+    </div>
+    <hr style="margin-bottom: 10px;">
+    <div class="row">
+        <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3" style="text-align: center;">
+            <button class="btn btn-primary {{about[$index] ? 'active' : ''}}" style="margin: 0 5px;" ng-click="toggleAbout($index)" ng-repeat="btn in aboutBtns track by $index">{{btn}}</button>
+        </div>
+    </div>
+</div>
