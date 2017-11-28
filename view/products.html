@@ -1,0 +1,51 @@
+<div class="products" page-height-watch>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1" style="text-align: center">
+                <h1><strong>我们的产品</strong></h1>
+            </div>
+        </div>
+        <hr style="margin: 10px 0;">
+        <div class="row productsItem">
+            <div class="col-md-4" ng-repeat="x in products track by $index" item-click="{{$index}}">
+                <img class="img-thumbnail img-responsive" ng-src="{{x.url}}" alt="{{x.name}}">
+                <p class="img-rounded" style="width: 85%; text-align: center; margin: 0 0 0 7.5%; height: 35px; line-height: 35px;"><strong>{{x.name}}</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid productsShow">
+        <div class="container">
+            <div class="row" style="padding: 3%;">
+                <table class="table table-bordered table-responsive">
+                    <tbody>
+                        <tr>
+                            <td>产品名称</td>
+                            <td>{{theItem.name}}</td>
+                        </tr>
+                        <tr>
+                            <td>腐植酸含量(以干基计)</td>
+                            <td>{{theItem.portion}}</td>
+                        </tr>
+                        <tr>
+                            <td>有机质(以干基计)</td>
+                            <td>{{theItem.organic}}</td>
+                        </tr>
+                        <tr>
+                            <td>NPK</td>
+                            <td>{{theItem.NPK}}</td>
+                        </tr>
+                        <tr>
+                            <td>微量元素</td>
+                            <td>{{theItem.elements}}</td>
+                        </tr>
+                        <tr>
+                            <td>包装</td>
+                            <td>{{theItem.size}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

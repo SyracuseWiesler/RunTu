@@ -4,12 +4,12 @@
 angular.module("modFactory", []).factory("myFactory", function(){
     var banners = ["./img/banner01.jpg", "./img/banner02.jpg"];
     var products = [
-        {name: "片状腐植酸钠", url: "./img/products/pzfzsn.jpg"},
-        {name: "片状腐植酸钾", url: "./img/products/pzfzsj.jpg"},
-        {name: "精品腐植酸钠颗粒", url: "./img/products/jpfzsnkl.jpg"},
-        {name: "精品腐植酸钾颗粒", url: "./img/products/jpfzsjkl.jpg"},
-        {name: "粉状腐植酸原矿", url: "./img/products/fzfzsyk.jpg"},
-        {name: "腐植酸造粒", url: "./img/products/fzszl.jpg"},
+        {name: "片状腐植酸钠", url: "./img/products/pzfzsn.jpg", portion: ">70%", organic: "85%", NPK: "3% ~ 5%", elements: "Ca Mg S Cu Zn Mn Mo", size: "25 Kg 编织袋, 也可根据顾客要求订做"},
+        {name: "片状腐植酸钾", url: "./img/products/pzfzsj.jpg", portion: ">68%", organic: "85%", NPK: "3% ~ 5%", elements: "Ca Mg S Cu Zn Mn Mo", size: "25 Kg 编织袋, 也可根据顾客要求订做"},
+        {name: "精品腐植酸钠颗粒", url: "./img/products/jpfzsnkl.jpg", portion: ">65%", organic: "85%", NPK: "3% ~ 5%", elements: "Ca Mg S Cu Zn Mn Mo", size: "25 Kg 编织袋, 也可根据顾客要求订做"},
+        {name: "精品腐植酸钾颗粒", url: "./img/products/jpfzsjkl.jpg", portion: ">65%", organic: "85%", NPK: "3% ~ 5%", elements: "Ca Mg S Cu Zn Mn Mo", size: "25 Kg 编织袋, 也可根据顾客要求订做"},
+        {name: "粉状腐植酸原矿", url: "./img/products/fzfzsyk.jpg", portion: ">65%", organic: "85%", NPK: "3% ~ 5%", elements: "Ca Mg S Cu Zn Mn Mo", size: "25 Kg 编织袋, 也可根据顾客要求订做"},
+        {name: "腐植酸造粒", url: "./img/products/fzszl.jpg", portion: ">50%", organic: "85%", NPK: "3% ~ 5%", elements: "Ca Mg S Cu Zn Mn Mo", size: "25 Kg 编织袋, 也可根据顾客要求订做"},
     ];
     var indicatorStyle = {
         display: 'inline-block',
@@ -96,6 +96,8 @@ angular.module("modFactory", []).factory("myFactory", function(){
     var atBtn1 = true;
     /**菜单栏初始状态*/
     var menubar = [true, false, false, false, false, false];
+    /**产品页面初始选中*/
+    var selectedIdx = [0];
     return {
         banners: banners,
         carouselInterval: carouselInterval,
@@ -107,6 +109,7 @@ angular.module("modFactory", []).factory("myFactory", function(){
         innerShowText: innerShowText,
         atBtn1: atBtn1,
         menubar: menubar,
+        selectedIdx: selectedIdx,
         setMenubar: function (idx){
             for (var i = 0; i < menubar.length; i ++) {
                 menubar[i] = false;

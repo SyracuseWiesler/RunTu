@@ -1,7 +1,7 @@
 /**
  * Created by Eric on 11/17/2017.
  */
-angular.module("myApp").controller("ctrlHome", ["$scope", "myFactory", "$filter", "$rootScope", function($scope, myFactory, $filter, $rootScope){
+angular.module("myApp").controller("ctrlHome", ["$scope", "myFactory", "$filter", "$rootScope", "$location", function($scope, myFactory, $filter, $rootScope, $location){
     $scope.banners = myFactory.banners;
     $scope.indicatorStyle = myFactory.indicatorStyle;
     $scope.homeBlocks = myFactory.homeBlocks;
@@ -19,5 +19,11 @@ angular.module("myApp").controller("ctrlHome", ["$scope", "myFactory", "$filter"
     // angular.element(document).find("header").find(".nav.navbar-nav").children("li").eq(0).addClass("active");
     myFactory.setMenubar(0);
     $rootScope.menubar = myFactory.menubar;
+    $scope.clickItem = function(idx){
+        // $rootScope.productsIdx = idx;
+        $location.url("/products");
+        // $rootScope.$emit("clickItem", [idx]);
+    };
+    // $rootScope.productsIdx = -1;
 
 }]);

@@ -23,7 +23,19 @@ angular.module("myApp", ["ngRoute", "ngAnimate", "modFactory"]).config(["$routeP
             controller: "ctrlMyNewsArticles",
         });
     });
-    $routeProvider.otherwise({
+    $routeProvider.when("/products", {
+        templateUrl: "products.html",
+        controller: "ctrlProduct",
+    }).when("/video", {
+        templateUrl: "video.html",
+        controller: "ctrlVideo",
+    }).when("/about", {
+        templateUrl: "about.html",
+        controller: "ctrlAbout",
+    }).when("/contact", {
+        templateUrl: "contact.html",
+        controller: "ctrlContact",
+    }).otherwise({
         redirectTo: "/",
     });
 }])
@@ -270,16 +282,29 @@ angular.module("myApp", ["ngRoute", "ngAnimate", "modFactory"]).config(["$routeP
             },
         };
     })
-    .directive("menuClick", function(){
+    .directive("itemClick", ["myFactory", "$rootScope", function(myFactory, $rootScope){
         return {
             restrict: "A",
             scope: false,
             link: function(scope, element, attrs){
                 element.on("click", function(){
-                    angular.element(document).find("header").find(".nav.navbar-nav").children("li").removeClass("active");
-                    element.addClass("active");
+                    var idx = parseInt(attrs.itemClick);
+                    if (idx !== scope.selectedIdx || ! scope.isShowAreaOpened) {
+                        scope.isShowAreaOpened = true;
+                        angular.element(document).find(".productsItem").find("p").removeClass("active");
+                        element.find("p").addClass("active");
+                        angular.element(document).find(".productsShow").slideDown();
+                        angular.element(document).find(".productsShow")[0].scrollIntoView();
+                        scope.select(idx);
+                        scope.$apply();
+                    } else {
+                        scope.isShowAreaOpened = false;
+                        angular.element(document).find(".productsItem").find("p").removeClass("active");
+                        angular.element(document).find(".productsShow").slideUp();
+                    }
                 });
             },
         };
-    })
+    }])
+
 ;
