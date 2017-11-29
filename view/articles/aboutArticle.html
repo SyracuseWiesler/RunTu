@@ -53,17 +53,24 @@
                 <p align="center"><strong>饲料生产许可证</strong></p>
             </div>
         </div>
-        <div class="cover" style="display: none;" close-cover>
-            <img class="img-responsive" src="" alt="">
-            <i class="glyphicon glyphicon-remove-sign" close-cover></i>
-        </div>
         <br><br>
     </div>
 
-    <div class="row" ng-show="about[3]">
+    <div class="row about3" ng-show="about[3]">
         <br>
-            <h1>Hello about3</h1>
+            <div class="col-md-3 col-sm-6 col-xs-12" ng-repeat="x in aboutShow track by $index">
+                <img class="img-responsive img-thumbnail" ng-src="{{x}}" alt="企业风采展示-{{$index + 1}}" show-cover="{{x}}">
+                <p class="img-rounded"><strong>企业风采展示-{{$index + 1}}</strong></p>
+            </div>
+            <div class="cover" style="display: none;" close-cover>
+                <img class="img-responsive" src="" alt="">
+                <i class="glyphicon glyphicon-remove-sign" close-cover></i>
+            </div>
         <br><br>
+    </div>
+    <div class="cover" style="display: none;" close-cover>
+        <img class="img-responsive" src="" alt="">
+        <i class="glyphicon glyphicon-remove-sign" close-cover></i>
     </div>
 
 </div>

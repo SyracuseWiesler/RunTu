@@ -347,6 +347,16 @@ angular.module("myApp", ["ngRoute", "ngAnimate", "modFactory"]).config(["$routeP
                             height: height,
                             margin: "0 auto",
                         });
+                        if (attrs.showCover === "license") {
+                            img.attr("src", "./img/license.jpg");
+                        } else if (attrs.showCover === "permit") {
+                            img.attr("src", "./img/permit.jpg");
+                        } else {
+                            img.attr("src", attrs.showCover);
+                            img.css({
+                                height: parseFloat(height) * 0.6 + "px",
+                            });
+                        }
                     }
                 });
             },

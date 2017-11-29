@@ -92,6 +92,11 @@ angular.module("modFactory", []).factory("myFactory", function(){
             {title: "腐植酸，看“天气”重在补“地气”", url: "", date: myTime()},
         ],
     };
+    /**企业风采 图片名称数组*/
+    var aboutShow = [];
+    for (var i = 0; i < 12; i ++) {
+        aboutShow.push("./img/aboutShow/" + i + ".jpg");
+    }
     /**myNews.html 初始状态*/
     var atBtn1 = true;
     /**菜单栏初始状态*/
@@ -115,6 +120,7 @@ angular.module("modFactory", []).factory("myFactory", function(){
         selectedIdx: selectedIdx,
         about: about,
         aboutBtns: aboutBtns,
+        aboutShow: aboutShow,
         setMenubar: function (idx){
             for (var i = 0; i < menubar.length; i ++) {
                 menubar[i] = false;

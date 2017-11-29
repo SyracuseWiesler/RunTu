@@ -142,7 +142,8 @@ body {
     }
     .products .row h1,
     .myVideo .row h1,
-    .myAbout .row h1{
+    .myAbout .row h1,
+    .myContact .row h1{
         color: orange;
         margin-top: 20px;
     }
@@ -182,140 +183,283 @@ body {
         box-shadow: none;
         outline: none;
     }
+    .myAbout .about3 p {
+        background: rgb(5, 54, 54);
+        color: white;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+    }
+    .myContact form i.glyphicon-asterisk {
+        height: 34px;
+        line-height: 34px;
+        font-size: 10px;
+        color: red;
+    }
+    .myContact form label {
+        color: orange;
+        font-weight: bold;
+        padding: 0;
+        height: 34px;
+        line-height: 34px;
+        text-align: right;
+    }
+
+    .myContact .address1 > div:nth-child(1),
+    .myContact .phone1 > div:nth-child(1),
+    .myContact .email1 > div:nth-child(1) {
+        padding: 0;
+    }
+
+    .myContact .address1 > div:nth-child(1) > div,
+    .myContact .phone1 > div:nth-child(1) > div,
+    .myContact .email1 > div:nth-child(1) > div {
+        height: 60px;
+        width: 60px;
+        border-radius: 30px;
+        background: orange;
+    }
+
+    .myContact .address1 > div:nth-child(2) > div,
+    .myContact .phone1 > div:nth-child(2) > div,
+    .myContact .email1 > div:nth-child(2) > div {
+        padding-left: 20px;
+    }
+
+    .myContact .address1 .glyphicon,
+    .myContact .phone1 .glyphicon,
+    .myContact .email1 .glyphicon {
+        position: absolute;
+        top: 25%;
+        left: 21%;
+        font-size: 30px;
+        color: white;
+    }
+    .myContact .phone1 a:hover,
+    .myContact .email1 a:hover {
+        text-decoration: none;
+    }
+
+
     /*.home .news  img {*/
         /*text-align: center;*/
     /*}*/
 }
-@media all and (min-width: 768px){
+@media all and (min-width: 768px) {
     /*tablet col-sm-*/
     header .email,
-    header .phone{
+    header .phone {
         /*position: relative;*/
         left: 100px;
         /*right: 0;*/
     }
+
     footer .row:nth-child(2) {
         height: auto;
     }
-    .display-area .display .display-inner .icon-side>.row h1 {
+
+    .display-area .display .display-inner .icon-side > .row h1 {
         text-align: center;
     }
 
     .navbar-default a.navbar-brand {
         display: none;
     }
-    .display-area .display .display-inner .icon-side>.row:nth-child(2) {
+
+    .display-area .display .display-inner .icon-side > .row:nth-child(2) {
         display: none;
     }
-    .home .show1 .inner-show:nth-child(3)>div:nth-child(2) {
+
+    .home .show1 .inner-show:nth-child(3) > div:nth-child(2) {
         display: none;
     }
+
     /*.home .show1 .inner-show:nth-child(3)>div:nth-child(3) {*/
-        /*height: 300px;*/
+    /*height: 300px;*/
     /*}*/
     /*.home .show1 .inner-show:nth-child(3)>div:nth-child(3) p {*/
-        /*margin: -20px 0 0 0 ;*/
+    /*margin: -20px 0 0 0 ;*/
     /*}*/
     .myNews .row:nth-child(1) {
         margin: 20px 0 5px 0;
     }
+
     .myNews .row:nth-child(1) h1 {
         color: orange;
     }
+
     .myNews #myNews_btn1 {
         text-align: right;
         outline: none;
     }
+
     .myNews #myNews_btn2 {
         text-align: left;
         outline: none;
     }
+
     .myNews #myNews_btn1 .btn.btn-primary,
     .myNews #myNews_btn2 .btn.btn-primary {
         border: none;
     }
+
     .myNews #myNews_btn1 .btn.btn-primary.active,
     .myNews #myNews_btn2 .btn.btn-primary.active {
         background: orange;
     }
+
     .myNews .newsContent h3 {
         text-align: center;
         margin-top: 20px;
     }
+
     .myNews .newsContent h3 strong {
         font-weight: 900;
     }
-    .myNews .newsContent>div.row>div.articleSrc {
+
+    .myNews .newsContent > div.row > div.articleSrc {
         text-align: right;
     }
-    .myNews .newsContent>div.row>div.articleDate {
+
+    .myNews .newsContent > div.row > div.articleDate {
         text-align: left;
         padding: 0;
     }
-    .myNews .newsContent>div.row>div.articleSrc span,
-    .myNews .newsContent>div.row>div.articleDate span {
+
+    .myNews .newsContent > div.row > div.articleSrc span,
+    .myNews .newsContent > div.row > div.articleDate span {
         color: orange;
     }
-    .myNews .newsContent>div.row.articleContent {
+
+    .myNews .newsContent > div.row.articleContent {
         padding-top: 20px;
         font-family: SimSun;
     }
+
     .products .row h1,
     .myVideo .row h1,
-    .myAbout .row h1 {
+    .myAbout .row h1,
+    .myContact .row h1 {
         margin-top: 20px;
         color: orange;
     }
+
     .products .productsItem img {
         width: 85%;
         /*text-align: center;*/
     }
-    .products .productsItem>div {
+
+    .products .productsItem > div {
         text-align: center;
         margin: 10px 0;
     }
-    .products .productsItem>div:hover {
+
+    .products .productsItem > div:hover {
         cursor: pointer;
     }
+
     .products .container-fluid.productsShow {
         background: white;
         padding: 0;
         margin: 0;
         display: none;
     }
+
     .products .container-fluid.productsShow .row {
         background: black;
         color: white;
     }
+
     .products .row.productsItem p {
         background: green;
     }
+
     .products .row.productsItem p.active {
         background: orange;
     }
+
     .home video::-internal-media-controls-download-button,
-    .myVideo video::-internal-media-controls-download-button{
-        display:none;
+    .myVideo video::-internal-media-controls-download-button {
+        display: none;
     }
+
     .home video::-webkit-media-controls-enclosure,
-    .myVideo video::-webkit-media-controls-enclosure{
-        overflow:hidden;
+    .myVideo video::-webkit-media-controls-enclosure {
+        overflow: hidden;
     }
+
     .home video::-webkit-media-controls-panel,
-    .myVideo video::-webkit-media-controls-panel{
+    .myVideo video::-webkit-media-controls-panel {
         width: calc(100% + 30px);
     }
+
     .myAbout button {
         border: none;
     }
+
     .myAbout button.btn-primary.active,
     .myAbout button.btn-primary:active:focus,
-    .myAbout button.btn-primary:focus{
+    .myAbout button.btn-primary:focus {
         background: orange;
         box-shadow: none;
         outline: none;
     }
 
+    .myAbout .about3 p {
+        background: rgb(5, 54, 54);
+        color: white;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+    }
+
+    .myContact form i.glyphicon-asterisk {
+        height: 34px;
+        line-height: 34px;
+        font-size: 8px;
+        color: red;
+    }
+
+    .myContact form label {
+        color: orange;
+        font-weight: bold;
+        padding: 0;
+    }
+
+    .myContact .address1 > div:nth-child(1),
+    .myContact .phone1 > div:nth-child(1),
+    .myContact .email1 > div:nth-child(1) {
+        padding: 0;
+    }
+
+    .myContact .address1 > div:nth-child(1) > div,
+    .myContact .phone1 > div:nth-child(1) > div,
+    .myContact .email1 > div:nth-child(1) > div {
+        height: 80px;
+        width: 80px;
+        border-radius: 40px;
+        background: orange;
+    }
+
+    .myContact .address1 > div:nth-child(2) > div,
+    .myContact .phone1 > div:nth-child(2) > div,
+    .myContact .email1 > div:nth-child(2) > div {
+        padding-left: 20px;
+    }
+
+    .myContact .address1 .glyphicon,
+    .myContact .phone1 .glyphicon,
+    .myContact .email1 .glyphicon {
+        position: absolute;
+        top: 24%;
+        left: 22%;
+        font-size: 40px;
+        color: white;
+    }
+    .myContact .phone1 a:hover,
+    .myContact .email1 a:hover {
+        text-decoration: none;
+    }
 }
 @media all and (min-width: 992px){
     /*small laptops col-md-*/

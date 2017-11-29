@@ -1,5 +1,119 @@
 <div class="myContact" page-height-watch>
     <div class="container">
-        <h1>Hello Contact</h1>
+        <div class="row">
+            <h1 align="center"><strong>联系我们</strong></h1>
+        </div>
+        <hr style="margin: 10px 0;">
+
+        <div class="row">
+            <div class="col-md-8 col-sm-8 col-xs-12">
+                <form class="form-horizontal" role="form" name="myForm" novalidate>
+                    <!--姓名-->
+                    <div class="form-group">
+                        <label for="name" class="col-sm-2 col-xs-2 control-label">姓名</label>
+                        <div class="col-sm-9 col-xs-9">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="请输入名字" maxlength="5" ng-model="name" autocomplete="off" required>
+                            <div style="height: 12px">
+                                <div style="color:red;" ng-show="myForm.name.$dirty && myForm.name.$invalid" align="right">
+                                    <span style="line-height: 12px;" ng-show="myForm.name.$error.required"><strong>请填写您的姓名</strong></span>
+                                </div>
+                            </div>
+                        </div>
+                        <i class="glyphicon glyphicon-asterisk"></i>
+                    </div>
+                    <!--邮箱-->
+                    <div class="form-group">
+                        <label for="email" class="col-sm-2 col-xs-2 control-label">邮箱</label>
+                        <div class="col-sm-9 col-xs-9">
+                            <input type="email" class="form-control" id="email" placeholder="电子邮件" autocomplete="off" ng-model="email">
+                            <div style="height: 12px;"></div>
+                        </div>
+                    </div>
+                    <!--电话-->
+                    <div class="form-group">
+                        <label for="tel" class="col-sm-2 col-xs-2 control-label">电话</label>
+                        <div class="col-sm-9 col-xs-9">
+                            <input type="tel" class="form-control" name="tel" id="tel" placeholder="电话" ng-model="tel" autocomplete="off" required>
+                            <div style="height: 12px">
+                                <div style="color:red;" ng-show="myForm.tel.$dirty && myForm.tel.$invalid" align="right">
+                                    <span style="line-height: 12px;" ng-show="myForm.tel.$error.required"><strong>请填写您的电话</strong></span>
+                                </div>
+                            </div>
+                        </div>
+                        <i class="glyphicon glyphicon-asterisk"></i>
+                    </div>
+                    <!--信息-->
+                    <div class="form-group">
+                        <label for="info" class="col-sm-2 col-xs-2 control-label">信息</label>
+                        <div class="col-sm-9 col-xs-9">
+                            <textarea name="info" id="info" rows="10" class="form-control" ng-model="info" placeholder="请填写信息" style="resize: none;" required></textarea>
+                            <div style="height: 12px">
+                                <div style="color:red;" ng-show="myForm.info.$dirty && myForm.info.$invalid" align="right">
+                                    <span style="line-height: 12px;" ng-show="myForm.info.$error.required"><strong>请填写您的信息</strong></span>
+                                </div>
+                            </div>
+                        </div>
+                        <i class="glyphicon glyphicon-asterisk"></i>
+                    </div>
+                    <!--提交-->
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10 col-xs-10 col-xs-offset-2">
+                            <button type="submit" class="btn btn-success col-sm-3 col-xs-4"
+                            ng-disabled="myForm.name.$invalid || myForm.tel.$invalid || myForm.info.$invalid"
+                            >发送</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="row">
+                    <h3 align="center" style="color: orange;"><strong>联系方式</strong></h3>
+                </div>
+                <br>
+                <div class="row address1">
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div>
+                            <i class="glyphicon glyphicon-map-marker"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+                        <div class="row">
+                            <p style="color: grey;"><strong>公司地址</strong></p>
+                            <p style="margin: 0"><strong>宁夏石嘴山市</strong></p>
+                            <p style="margin: 0"><strong>惠农区经济开发工业园区</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row phone1">
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div>
+                            <i class="glyphicon glyphicon-earphone"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+                        <div class="row">
+                            <p style="color: grey;"><strong>联系电话</strong></p>
+                            <p style="margin: 0"><strong>王总: <a href="tel:+8613847327570">13847327570</a></strong></p>
+                            <p style="margin: 0"><strong>公司: <a href="tel:09523813666">0952-3813666</a></strong></p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row email1">
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div>
+                            <i class="glyphicon glyphicon-envelope"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-9">
+                        <div class="row">
+                            <p style="color: grey;"><strong>电子邮件</strong></p>
+                            <p style="margin: 0"><strong><a href="mailto: wrj2080989@163.com">WRJ2080989@163.com</a></strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

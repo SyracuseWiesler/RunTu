@@ -24,6 +24,13 @@ angular.module("myApp").controller("ctrlHome", ["$scope", "myFactory", "$filter"
         $location.url("/products");
         // $rootScope.$emit("clickItem", [idx]);
     };
+    $rootScope.aboutClick = function(idx){
+        for (var i = 0; i < myFactory.about.length; i ++) {
+            myFactory.about[i] = false;
+        }
+        myFactory.about[idx] = true;
+        $location.url("/about");
+    };
     // $rootScope.productsIdx = -1;
 
 }]);

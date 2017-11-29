@@ -10,4 +10,5 @@ angular.module("myApp").controller("ctrlAbout", ["$scope", "myFactory", "$rootSc
         myFactory.about[idx] = true;
         $scope.about = myFactory.about;
     };
+    $scope.aboutShow = myFactory.aboutShow;
 }]);
