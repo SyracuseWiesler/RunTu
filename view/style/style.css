@@ -340,6 +340,20 @@ body {
     .myNews .newsContent>div.row>div.articleSrc {
         margin-left: 22%;
     }
+    .myAbout .image img:hover {
+        cursor: pointer;
+    }
+    .myAbout .cover .glyphicon-remove-sign {
+        position: absolute;
+        right: 2%;
+        top: 2%;
+        color: white;
+        font-size: 30px;
+    }
+    .myAbout .cover .glyphicon-remove-sign:hover {
+        cursor: pointer;
+        opacity: 0.6;
+    }
     /*.myNews .newsContent>div.row>div.articleDate {*/
         /*text-align: left;*/
         /*padding: 0;*/

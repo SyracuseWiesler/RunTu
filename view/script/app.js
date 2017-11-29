@@ -325,23 +325,47 @@ angular.module("myApp", ["ngRoute", "ngAnimate", "modFactory"]).config(["$routeP
             restrict: "A",
             scope: false,
             link: function(scope, element, attrs){
+                var doc = angular.element(document);
                 var coverStyle = {
                     display: "block",
                     position: "absolute",
                     background: "rgba(0, 0, 0, 0.5)",
-                    top: angular.element(document).find("header").height() + "px",
-                    left: "5%",
-                    width: "90%",
-                    height: angular.element(document).find("html").find("body").height() - angular.element(document).find("html").find("header").height() - angular.element(document).find("html").find("footer").height() + "px",
+                    top: doc.find("header").height() + "px",
                 };
                 element.on("click", function(){
-                    if (angular.element(document).find("html").width() >= 992) {
-                        angular.element(document).find(".cover").css(coverStyle);
-                        angular.element(document).find(".cover").children("img").src = attrs.showCover === "license" ? "./img/license.jpg" : "./img/permit.jpg";
+                    var height = doc.find("html").height() - doc.find("header").height() - doc.find("footer").height() + "px";
+                    if (doc.find("html").width() >= 992) {
+                        doc.find(".cover").css(coverStyle);
+                        doc.find(".cover").css({
+                            height: height,
+                            width: doc.find("html").width() + "px",
+                            left: "0"
+                        });
+                        var img = doc.find(".cover").children("img");
+                        attrs.showCover === "license" ? img.attr("src", "./img/license.jpg") : img.attr("src", "./img/permit.jpg");
+                        img.css({
+                            height: height,
+                            margin: "0 auto",
+                        });
                     }
                 });
             },
         };
     })
+    .directive("closeCover", ["$window", function($window){
+        return {
+            restrict: "A",
+            scope: false,
+            link: function(scope, element, attrs){
+                var cover = angular.element(document).find(".cover");
+                element.on("click", function(){
+                    cover.css("display", "none");
+                });
+                $window.addEventListener("keydown", function(e){
+                    if (e.keyCode === 27) cover.css("display", "none");
+                }, false);
+            },
+        };
+    }])
 
 ;

@@ -43,7 +43,7 @@
 
     <div class="row" ng-show="about[2]">
         <br>
-        <div class="row">
+        <div class="row image">
             <div class="col-md-4">
                 <img class="img-responsive" src="./img/license.jpg" alt="license" show-cover="license">
                 <p align="center"><strong>营业执照</strong></p>
@@ -53,8 +53,9 @@
                 <p align="center"><strong>饲料生产许可证</strong></p>
             </div>
         </div>
-        <div class="cover" style="display: none;">
-            <img src="" alt="">
+        <div class="cover" style="display: none;" close-cover>
+            <img class="img-responsive" src="" alt="">
+            <i class="glyphicon glyphicon-remove-sign" close-cover></i>
         </div>
         <br><br>
     </div>
