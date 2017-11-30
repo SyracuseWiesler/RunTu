@@ -62,12 +62,17 @@
                             ng-disabled="myForm.name.$invalid || myForm.tel.$invalid || myForm.info.$invalid"
                             ng-click="submit()"
                             >发送</button>
+                            <span ng-show="clicked">
+                                <img src="./img/loading.gif" alt="loading" width="20" height="20"><b>发送中, 请稍后...</b>
+                            </span>
                         </div>
                     </div>
                 </form>
-                <div class="alert alert-success" ng-show="displayAlert">
-                    <strong ng-show="flag">信息发送成功，我们会尽快与您联系</strong>
-                    <strong ng-hide="flag">信息发送失败，请稍后再发，或者用电话联系我们更快哦</strong>
+                <div class="row" style="height: 55px;">
+                    <div class="alert alert-success" ng-show="displayAlert">
+                        <strong ng-show="flag">信息发送成功，我们会尽快与您联系</strong>
+                        <strong ng-hide="flag">信息发送失败，请稍后再发，或者用电话联系我们更快哦</strong>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12">
