@@ -1,7 +1,7 @@
 /**
  * Created by Eric on 11/17/2017.
  */
-angular.module("modFactory", []).factory("myFactory", function(){
+angular.module("modFactory", []).factory("myFactory", ["$http", function($http){
     var banners = ["./img/banner01.jpg", "./img/banner02.jpg"];
     var products = [
         {name: "片状腐植酸钠", url: "./img/products/pzfzsn.jpg", portion: ">70%", organic: "85%", NPK: "3% ~ 5%", elements: "Ca Mg S Cu Zn Mn Mo", size: "25 Kg 编织袋, 也可根据顾客要求订做"},
@@ -136,5 +136,12 @@ angular.module("modFactory", []).factory("myFactory", function(){
         myTime: myTime,
         companyNews: companyNews,
         industryNews: industryNews,
+        sendEmail: function(email){
+            return $http({
+                method: "POST",
+                url: "/email/" + new Date().getTime(),  // /email/时间戳
+                data: email,  // email object, including {name: "guest", tel: "", email: "", info: ""}
+            });
+        },
     };
-});
+}]);
