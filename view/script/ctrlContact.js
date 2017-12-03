@@ -1,4 +1,4 @@
-angular.module("myApp").controller("ctrlContact", ["$scope", "myFactory", "$rootScope", "$timeout", "$location", function($scope, myFactory, $rootScope, $timeout, $location){
+angular.module("myApp").controller("ctrlContact", ["$scope", "myFactory", "$rootScope", "$timeout", "$route", function($scope, myFactory, $rootScope, $timeout, $route){
     myFactory.setMenubar(5);
     $rootScope.menubar = myFactory.menubar;
     $scope.flag = true;
@@ -24,8 +24,8 @@ angular.module("myApp").controller("ctrlContact", ["$scope", "myFactory", "$root
             $scope.tel = "";
             $scope.info = "";
             $timeout(function(){
-                $location.url("/contact");
                 $scope.displayAlert = false;
+                $route.reload();
             }, 3000);
         }, function error(res){
             // 提示未发送成功，请稍后再试
