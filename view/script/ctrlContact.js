@@ -1,4 +1,4 @@
-angular.module("myApp").controller("ctrlContact", ["$scope", "myFactory", "$rootScope", "$timeout", function($scope, myFactory, $rootScope, $timeout){
+angular.module("myApp").controller("ctrlContact", ["$scope", "myFactory", "$rootScope", "$timeout", "$location", function($scope, myFactory, $rootScope, $timeout, $location){
     myFactory.setMenubar(5);
     $rootScope.menubar = myFactory.menubar;
     $scope.flag = true;
@@ -11,6 +11,7 @@ angular.module("myApp").controller("ctrlContact", ["$scope", "myFactory", "$root
             email: $scope.email,
             tel: $scope.tel,
             info: $scope.info,
+            timestamp: new Date().getTime(),
         };
         myFactory.sendEmail(email).then(function success(res){
             // 显示您的信息已发送成功，我们会尽快与您联系
@@ -23,6 +24,7 @@ angular.module("myApp").controller("ctrlContact", ["$scope", "myFactory", "$root
             $scope.tel = "";
             $scope.info = "";
             $timeout(function(){
+                $location.url("/contact");
                 $scope.displayAlert = false;
             }, 3000);
         }, function error(res){

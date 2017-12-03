@@ -13,10 +13,10 @@ app.use(express.static(path.join(__dirname, "/view")));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.post("/email/:timestamp", function(req, res){
-    var timestamp = parseInt(req.params.timestamp);
-    var time = myTime(timestamp);
+app.post("/email", function(req, res){
     var email = req.body;
+    var timestamp = parseInt(email.timestamp);
+    var time = myTime(timestamp);
     console.log(email);
     console.log(time);
     // var smtpTransporter = nodemailer.createTransport("smtps://1305410830%40qq.com:gczyws19900705@smtp.qq.com");
@@ -74,7 +74,7 @@ function formatEmail (email, time) {
     return currentTime + name + emailAddr + tel + info;
 }
 // console.log(new Date(parseInt("314456700000")).getFullYear());
-app.listen(8888, function(){
+app.listen(3000, function(){
     console.log(myTime() + " server launched successfully \n\r");
 });
 
