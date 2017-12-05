@@ -139,7 +139,7 @@ angular.module("modFactory", []).factory("myFactory", ["$http", function($http){
         sendEmail: function(email){
             return $http({
                 method: "POST",
-                url: "/email/" + new Date().getTime(),  // /email/时间戳
+                url: "/email",  // /email object
                 // url: "http://localhost:3000/email",
                 data: email,  // email object, including {name: "guest", tel: "", email: "", info: ""}
             });

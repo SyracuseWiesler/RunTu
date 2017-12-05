@@ -31,6 +31,7 @@ angular.module("myApp").controller("ctrlHome", ["$scope", "myFactory", "$filter"
         myFactory.about[idx] = true;
         $location.url("/about");
     };
+    $rootScope.year = new Date().getFullYear();
     // $rootScope.productsIdx = -1;
 
 }]);

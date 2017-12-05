@@ -19,7 +19,6 @@ app.post("/email", function(req, res){
     var time = myTime(timestamp);
     console.log(email);
     console.log(time);
-    // var smtpTransporter = nodemailer.createTransport("smtps://1305410830%40qq.com:gczyws19900705@smtp.qq.com");
     var smtpTransporter = nodemailer.createTransport("smtps://occidental_zephyr%40163.com:occidental_@smtp.163.com");
 
     var mailOptions = {
@@ -74,7 +73,7 @@ function formatEmail (email, time) {
     return currentTime + name + emailAddr + tel + info;
 }
 // console.log(new Date(parseInt("314456700000")).getFullYear());
-app.listen(3000, function(){
+app.listen(3000, function(){  // 3000, 80端口可能无需域名URL转发
     console.log(myTime() + " server launched successfully \n\r");
 });
 
