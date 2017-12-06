@@ -2,6 +2,7 @@
  * Created by Eric on 11/17/2017.
  */
 angular.module("modFactory", []).factory("myFactory", ["$http", function($http){
+    var en = true;
     var banners = ["./img/banner01.jpg", "./img/banner02.jpg"];
     var products = [
         {name: "片状腐植酸钠", url: "./img/products/pzfzsn.jpg", portion: ">70%", organic: "85%", NPK: "3% ~ 5%", elements: "Ca Mg S Cu Zn Mn Mo", size: "25 Kg 编织袋, 也可根据顾客要求订做"},
@@ -107,6 +108,7 @@ angular.module("modFactory", []).factory("myFactory", ["$http", function($http){
     var about = [true, false, false, false];
     var aboutBtns = ["公司简介", "企业文化", "资质荣誉", "企业风采"];
     return {
+        en: en,
         banners: banners,
         carouselInterval: carouselInterval,
         carousel1Interval: carousel1Interval,

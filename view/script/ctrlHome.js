@@ -2,6 +2,7 @@
  * Created by Eric on 11/17/2017.
  */
 angular.module("myApp").controller("ctrlHome", ["$scope", "myFactory", "$filter", "$rootScope", "$location", function($scope, myFactory, $filter, $rootScope, $location){
+    $rootScope.en = myFactory.en;
     $scope.banners = myFactory.banners;
     $scope.indicatorStyle = myFactory.indicatorStyle;
     $scope.homeBlocks = myFactory.homeBlocks;
