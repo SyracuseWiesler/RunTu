@@ -70,14 +70,14 @@
                 </form>
                 <div class="row" style="height: 55px;">
                     <div class="alert alert-success" ng-show="displayAlert">
-                        <strong ng-show="flag">信息发送成功，我们会尽快与您联系</strong>
-                        <strong ng-hide="flag">信息发送失败，请稍后再发，或者用电话联系我们更快哦</strong>
+                        <strong ng-show="flag">{{en ? 'Message Received, we will contact you ASAP' : '信息发送成功，我们会尽快与您联系'}}</strong>
+                        <strong ng-hide="flag">{{en ? 'Failed to submit the message, please try again later or call us' : '信息发送失败，请稍后再发，或者用电话联系我们更快哦'}}</strong>
                     </div>
                 </div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="row">
-                    <h3 align="center" style="color: orange;"><strong>联系方式</strong></h3>
+                    <h3 align="center" style="color: orange;"><strong>{{en ? 'Contact' : '联系方式'}}</strong></h3>
                 </div>
                 <br>
                 <div class="row address1">
@@ -88,9 +88,15 @@
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-9">
                         <div class="row">
-                            <p style="color: grey;"><strong>公司地址</strong></p>
-                            <p style="margin: 0"><strong>宁夏石嘴山市</strong></p>
-                            <p style="margin: 0"><strong>惠农区经济开发工业园区</strong></p>
+                            <p style="color: grey;"><strong>{{en ? 'Address' : '公司地址'}}</strong></p>
+                            <div ng-show="! en">
+                                <p style="margin: 0"><strong>宁夏石嘴山市</strong></p>
+                                <p style="margin: 0"><strong>惠农区经济开发工业园区</strong></p>
+                            </div>
+                            <div ng-show="en">
+                                <p style="margin: 0"><strong>Huinong Economy Development Industry Zone</strong></p>
+                                <p style="margin: 0"><strong>Shizuishan, Ningxia, China</strong></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -103,9 +109,9 @@
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-9">
                         <div class="row">
-                            <p style="color: grey;"><strong>联系电话</strong></p>
-                            <p style="margin: 0"><strong>王总: <a href="tel:+8613847327570">13847327570</a></strong></p>
-                            <p style="margin: 0"><strong>公司: <a href="tel:09523813666">0952-3813666</a></strong></p>
+                            <p style="color: grey;"><strong>{{en ? 'Phone' : '联系电话'}}</strong></p>
+                            <p style="margin: 0"><strong>{{en ? 'President: ' : '王总: '}} <a href="tel:+8613847327570">13847327570</a></strong></p>
+                            <p style="margin: 0"><strong>{{en ? 'Company: ' : '公司: '}}<a href="tel:09523813666">0952-3813666</a></strong></p>
                         </div>
                     </div>
                 </div>
@@ -118,7 +124,7 @@
                     </div>
                     <div class="col-md-9 col-sm-9 col-xs-9">
                         <div class="row">
-                            <p style="color: grey;"><strong>电子邮件</strong></p>
+                            <p style="color: grey;"><strong>{{en ? 'Email' : '电子邮件'}}</strong></p>
                             <p style="margin: 0"><strong><a href="mailto: wrj2080989@163.com">WRJ2080989@163.com</a></strong></p>
                         </div>
                     </div>

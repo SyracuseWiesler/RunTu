@@ -2,15 +2,17 @@
  * Created by Eric on 11/17/2017.
  */
 angular.module("modFactory", []).factory("myFactory", ["$http", function($http){
+    /**网页显示中文的设置true为英文，false为中文*/
     var en = true;
     var banners = ["./img/banner01.jpg", "./img/banner02.jpg"];
+    var pack = en ? "25 Kg bag or customized package size" : "25 Kg 编织袋, 也可根据顾客要求订做";
     var products = [
-        {name: "片状腐植酸钠", url: "./img/products/pzfzsn.jpg", portion: ">70%", organic: "85%", NPK: "3% ~ 5%", elements: "Ca Mg S Cu Zn Mn Mo", size: "25 Kg 编织袋, 也可根据顾客要求订做"},
-        {name: "片状腐植酸钾", url: "./img/products/pzfzsj.jpg", portion: ">68%", organic: "85%", NPK: "3% ~ 5%", elements: "Ca Mg S Cu Zn Mn Mo", size: "25 Kg 编织袋, 也可根据顾客要求订做"},
-        {name: "精品腐植酸钠颗粒", url: "./img/products/jpfzsnkl.jpg", portion: ">65%", organic: "85%", NPK: "3% ~ 5%", elements: "Ca Mg S Cu Zn Mn Mo", size: "25 Kg 编织袋, 也可根据顾客要求订做"},
-        {name: "精品腐植酸钾颗粒", url: "./img/products/jpfzsjkl.jpg", portion: ">65%", organic: "85%", NPK: "3% ~ 5%", elements: "Ca Mg S Cu Zn Mn Mo", size: "25 Kg 编织袋, 也可根据顾客要求订做"},
-        {name: "粉状腐植酸原矿", url: "./img/products/fzfzsyk.jpg", portion: ">65%", organic: "85%", NPK: "3% ~ 5%", elements: "Ca Mg S Cu Zn Mn Mo", size: "25 Kg 编织袋, 也可根据顾客要求订做"},
-        {name: "腐植酸造粒", url: "./img/products/fzszl.jpg", portion: ">50%", organic: "85%", NPK: "3% ~ 5%", elements: "Ca Mg S Cu Zn Mn Mo", size: "25 Kg 编织袋, 也可根据顾客要求订做"},
+        {name: en ? "Sodium Humate Flake" : "片状腐植酸钠", url: "./img/products/pzfzsn.jpg", portion: ">70%", organic: "85%", NPK: "3% ~ 5%", elements: "Ca Mg S Cu Zn Mn Mo", size: pack},
+        {name: en ? "Potassium Humate Flake" : "片状腐植酸钾", url: "./img/products/pzfzsj.jpg", portion: ">68%", organic: "85%", NPK: "3% ~ 5%", elements: "Ca Mg S Cu Zn Mn Mo", size: pack},
+        {name: en ? "Sodium Humate Granular" : "精品腐植酸钠颗粒", url: "./img/products/jpfzsnkl.jpg", portion: ">65%", organic: "85%", NPK: "3% ~ 5%", elements: "Ca Mg S Cu Zn Mn Mo", size: pack},
+        {name: en ? "Potassium Humate Granular" : "精品腐植酸钾颗粒", url: "./img/products/jpfzsjkl.jpg", portion: ">65%", organic: "85%", NPK: "3% ~ 5%", elements: "Ca Mg S Cu Zn Mn Mo", size: pack},
+        {name: en ? "Humic Acid Powder" : "粉状腐植酸原矿", url: "./img/products/fzfzsyk.jpg", portion: ">65%", organic: "85%", NPK: "3% ~ 5%", elements: "Ca Mg S Cu Zn Mn Mo", size: pack},
+        {name: en ? "Humic Acid Granular" : "腐植酸造粒", url: "./img/products/fzszl.jpg", portion: ">50%", organic: "85%", NPK: "3% ~ 5%", elements: "Ca Mg S Cu Zn Mn Mo", size: pack},
     ];
     var indicatorStyle = {
         display: 'inline-block',
@@ -29,23 +31,35 @@ angular.module("modFactory", []).factory("myFactory", ["$http", function($http){
     var homeBlocks = {
         left: {
             type: "flask",
-            title1: "我们的产品",
-            description: "通过近10年的科研、生产及实践，宁夏润土生物科技有限公司已发展成为行业中规模大，" +
+            title1: en ? "Products" : "我们的产品",
+            description: en ? "During the 10 years of research, production and practice, Ningxia RunTu Co.Ltd has become" +
+                " the largest humic acid product supplier in industry. We can produce various premium Sodium Humate, " +
+                "Potassium Humate, Humic Acid powder and customized products according to customers' requests" :
+                "通过近10年的科研、生产及实践，宁夏润土生物科技有限公司已发展成为行业中规模大，" +
             "品种全，品质优的腐植酸钠、腐植酸钾、腐植酸原粉专业生产基地，并可根据客户所需定制生产",
         },
         center: {
             type: "home",
-            title1: "生产车间",
-            description: "公司占地面积12万平方米, 拥有完整、科学的管理体系，拥有专业的营销团队并以诚信、实力和产品优良获得了同业界的认可",
+            title1: en ? "Factory" : "生产车间",
+            description: en ? "Our company take 12m<sup>2</sup> in industry zone and own scientific management system, " +
+                "professional marketing team. We are recognized by our integrity and products of good quality" : "" +
+                "公司占地面积12万平方米, 拥有完整、科学的管理体系，拥有专业的营销团队并以诚信、实力和产品优良获得了同业界的认可",
         },
         right: {
             type: "newspaper-o",
-            title1: "关于我们",
-            description: "宁夏润土生物科技有限公司（原石嘴山市顺平化工有限公司）成立于2008年，是一家集科研、开发、生产、" +
-            "推广于一体的民营生物科技企业，公司坐落于石嘴山市惠农区国家级经济开发工业园区",
+            title1: en ? "About us" : "关于我们",
+            description: en ? "Ningxia RunTu Co.Ltd, established in Huinong National Economy Development Industry Zone " +
+                "2008, is a bio technical company that combines scientific research, development and production." : "" +
+                "宁夏润土生物科技有限公司（原石嘴山市顺平化工有限公司）成立于2008年，是一家集科研、开发、生产、" +
+                "推广于一体的民营生物科技企业，公司坐落于石嘴山市惠农区国家级经济开发工业园区",
         }
     };
-    var innerShowText = "宁夏润土生物科技有限公司（原石嘴山市顺平化工有限公司）成立于2008年，是一家集科研、开发、生产、" +
+    var innerShowText = en ? "Ningxia RunTu Co.Ltd, established in Huinong National Economy Development Industry Zone " +
+        "2008, is a bio technical company that combines scientific research, development and production. During the " +
+        "10 years of research, production and practice, Ningxia RunTu Co.Ltd has become the largest humic acid product " +
+        "supplier in industry. We can produce various premium Sodium Humate, Potassium Humate, Humic Acid powder and " +
+        "customized products according to customers' requests. We are recognized by our integrity and products of good " +
+        "quality" : "宁夏润土生物科技有限公司（原石嘴山市顺平化工有限公司）成立于2008年，是一家集科研、开发、生产、" +
         "推广于一体的民营生物科技企业，公司坐落于石嘴山市惠农区国家级经济开发工业园区，距110国道1公里、京藏高速2公里、京兰铁路2公里，" +
         "交通便利地理位置优越。公司占地面积12万平方米，通过近10年的科研、生产及实践，宁夏润土生物科技有限公司已发展成为行业中规模大，" +
         "品种全，品质优的腐植酸钠、腐植酸钾、腐植酸原粉专业生产基地，并可根据客户所需定制生产。公司拥有完整、科学的管理体系，" +
@@ -59,7 +73,7 @@ angular.module("modFactory", []).factory("myFactory", ["$http", function($http){
         // ":" + (d.getSeconds() < 10 ? "0" + d.getSeconds() : d.getSeconds());
     }
     var companyNews = {
-        title: "公司新闻",
+        title: en ? "Company News" : "公司新闻",
         titleEng: "companyNews",
         icon: "television",
         showCaseUrl: "./img/news01.jpg",
@@ -76,7 +90,7 @@ angular.module("modFactory", []).factory("myFactory", ["$http", function($http){
         ],
     };
     var industryNews = {
-        title: "行业动态",
+        title: en ? "Industry News" : "行业动态",
         titleEng: "industryNews",
         icon: "globe",
         showCaseUrl: "./img/hydt01.jpg",
@@ -106,7 +120,7 @@ angular.module("modFactory", []).factory("myFactory", ["$http", function($http){
     var selectedIdx = [0];
     /**关于页面初始状态*/
     var about = [true, false, false, false];
-    var aboutBtns = ["公司简介", "企业文化", "资质荣誉", "企业风采"];
+    var aboutBtns = en ? ["Introduction", "Culture", "Certification", "Display"] : ["公司简介", "企业文化", "资质荣誉", "企业风采"];
     return {
         en: en,
         banners: banners,

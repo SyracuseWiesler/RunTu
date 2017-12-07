@@ -4,12 +4,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
-                    Copyright &copy; {{year}} 宁夏润土生物科技有限公司 版权所有
+                    Copyright &copy; {{year}} {{en ? 'Ningxia RunTu Co.Ltd' : '宁夏润土生物科技有限公司 版权所有'}}
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12 col-sm-12">
-                    电话：<a href="tel:09523813666">0952-3813666</a> <a href="tel:09523818771">3818771</a>   传真：0952-3813666   地址：宁夏石嘴山市惠农区经济开发工业园区
+                    {{en ? 'Phone' : '电话: '}}<a href="tel:09523813666">0952-3813666</a> <a href="tel:09523818771">3818771</a>
+                    {{en ? 'Fax: 0952-3813666   Address：Huinong Economy Development Industry Zone, Shizuishan, Ningxia, China' : '传真：0952-3813666   地址：宁夏石嘴山市惠农区经济开发工业园区'}}
                 </div>
             </div>
         </div>
